@@ -1,0 +1,92 @@
+Scenario 3: Two-Echelon Open Location-Routing Problem (2E-Open LRP)
+Description: The truck performs a TSP tour visiting one or more selected Candidate Depots. Personnel at each selected depot visit customers and do not return (Open Loop).
+Objective: Minimize (Setup Costs + Truck Route Distance + Max Personnel Route Length).
+
+--- Generating Data ---
+--- Building Model (Two-Echelon Open VRP) ---
+Set parameter Username
+Set parameter LicenseID to value 2718399
+Academic license - for non-commercial use only - expires 2026-10-06
+--- Solving Model ---
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (mac64[arm] - Darwin 25.1.0 25B78)
+
+CPU model: Apple M3 Pro
+Thread count: 12 physical cores, 12 logical processors, using up to 12 threads
+
+Optimize a model with 198 rows, 693 columns and 3960 nonzeros
+Model fingerprint: 0x96f02a27
+Variable types: 14 continuous, 679 integer (679 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+02]
+Presolve added 0 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 198 rows, 695 columns, 3372 nonzeros
+Variable types: 20 continuous, 675 integer (675 binary)
+
+Root relaxation: objective 1.936549e+02, 213 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  193.65493    0   35          -  193.65493      -     -    0s
+H    0     0                     732.5590456  193.65493  73.6%     -    0s
+H    0     0                     567.5244714  193.68972  65.9%     -    0s
+H    0     0                     498.0622515  193.68972  61.1%     -    0s
+     0     0  195.73412    0   34  498.06225  195.73412  60.7%     -    0s
+     0     0  196.09238    0   41  498.06225  196.09238  60.6%     -    0s
+     0     0  197.04215    0   48  498.06225  197.04215  60.4%     -    0s
+     0     0  197.06652    0   50  498.06225  197.06652  60.4%     -    0s
+     0     0  197.06652    0   50  498.06225  197.06652  60.4%     -    0s
+     0     0  198.62171    0   53  498.06225  198.62171  60.1%     -    0s
+     0     0  198.62473    0   55  498.06225  198.62473  60.1%     -    0s
+     0     0  198.80247    0   47  498.06225  198.80247  60.1%     -    0s
+     0     0  198.80247    0   48  498.06225  198.80247  60.1%     -    0s
+     0     0  198.83571    0   62  498.06225  198.83571  60.1%     -    0s
+     0     0  198.84931    0   55  498.06225  198.84931  60.1%     -    0s
+H    0     0                     489.4984246  198.88696  59.4%     -    0s
+H    0     2                     465.0746421  198.88696  57.2%     -    0s
+     0     2  198.88696    0   55  465.07464  198.88696  57.2%     -    0s
+H   26    26                     431.5641027  199.96056  53.7%  62.4    0s
+H   86   118                     397.7218337  199.96056  49.7%  39.6    0s
+H  102   118                     350.1699997  199.96056  42.9%  37.2    0s
+H  146   132                     337.0652072  199.96056  40.7%  31.4    0s
+H  155   132                     322.2561305  199.97739  37.9%  32.0    0s
+H 1189   510                     317.7778017  204.85271  35.5%  24.9    0s
+* 2058   986              49     317.6116165  208.57672  34.3%  23.4    0s
+H 3327  1411                     317.1937702  213.37021  32.7%  23.2    0s
+H 3399  1367                     316.5246822  213.37021  32.6%  23.4    0s
+H 3532  1308                     315.8441576  213.37021  32.4%  23.7    0s
+H 3534  1245                     311.1804466  213.37021  31.4%  23.7    0s
+H 4642  1115                     311.0514170  221.90720  28.7%  24.1    0s
+H10356  1253                     308.4785128  266.96042  13.5%  19.0    1s
+*26608  1363              60     303.1336021  283.27866  6.55%  14.7    1s
+
+Cutting planes:
+  Learned: 2
+
+Explored 32067 nodes (464099 simplex iterations) in 2.24 seconds (3.95 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 10: 303.134 303.134 308.479 ... 317.612
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.031336020862e+02, best bound 3.031336020862e+02, gap 0.0000%
+
+Optimal Solution Found!
+Total Objective Cost: 303.13
+
+Truck Route:
+  Path: 0 -> 101 -> 100 -> 0
+  Distance: 176.16
+
+Personnel Routes:
+Depot 100 (Selected):
+  Personnel 0: 100 -> 2 -> 10 (Dist: 89.50)
+  Personnel 1: 100 -> 3 -> 4 -> 9 (Dist: 94.68)
+Depot 101 (Selected):
+  Personnel 0: 101 -> 8 -> 6 (Dist: 77.55)
+  Personnel 1: 101 -> 7 -> 1 -> 5 (Dist: 96.98)
+Plot saved to plot_projectv3.png

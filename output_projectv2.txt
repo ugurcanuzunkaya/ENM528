@@ -1,0 +1,92 @@
+Scenario 2: Open Location-Routing Problem (Open LRP)
+Description: Similar to Scenario 1, but personnel do not return to the depot after visiting the last customer (Open Loop).
+Objective: Minimize (Setup Cost + Truck Round Trip Cost + Max Personnel Route Length).
+
+--- Generating Data ---
+--- Building Model (Open VRP) ---
+Set parameter Username
+Set parameter LicenseID to value 2718399
+Academic license - for non-commercial use only - expires 2026-10-06
+--- Solving Model ---
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (mac64[arm] - Darwin 25.1.0 25B78)
+
+CPU model: Apple M3 Pro
+Thread count: 12 physical cores, 12 logical processors, using up to 12 threads
+
+Optimize a model with 225 rows, 284 columns and 1851 nonzeros
+Model fingerprint: 0xd385b9cc
+Variable types: 21 continuous, 263 integer (263 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+02]
+Presolve removed 2 rows and 1 columns
+Presolve time: 0.01s
+Presolved: 223 rows, 283 columns, 3276 nonzeros
+Variable types: 21 continuous, 262 integer (262 binary)
+
+Root relaxation: objective 4.480680e+02, 74 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  448.06802    0   15          -  448.06802      -     -    0s
+H    0     0                     565.5763277  448.06802  20.8%     -    0s
+     0     0  453.55013    0   26  565.57633  453.55013  19.8%     -    0s
+H    0     0                     559.6231113  453.55013  19.0%     -    0s
+     0     0  453.79975    0   24  559.62311  453.79975  18.9%     -    0s
+H    0     0                     547.5816437  453.79975  17.1%     -    0s
+H    0     0                     545.0734266  454.04471  16.7%     -    0s
+     0     0  454.04471    0   24  545.07343  454.04471  16.7%     -    0s
+     0     0  454.46017    0   24  545.07343  454.46017  16.6%     -    0s
+H    0     0                     532.4515817  454.85090  14.6%     -    0s
+H    0     0                     529.1226064  454.85090  14.0%     -    0s
+H    0     0                     497.7777566  455.41759  8.51%     -    0s
+     0     0  455.41759    0   14  497.77776  455.41759  8.51%     -    0s
+     0     0  457.59701    0   24  497.77776  457.59701  8.07%     -    0s
+     0     0  457.60435    0   24  497.77776  457.60435  8.07%     -    0s
+     0     0  457.66095    0   15  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   25  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   14  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   17  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   17  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   14  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   16  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   16  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   24  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   14  497.77776  457.66095  8.06%     -    0s
+     0     0  457.66095    0   14  497.77776  457.66095  8.06%     -    0s
+     0     2  457.83065    0   14  497.77776  457.83065  8.03%     -    0s
+
+Cutting planes:
+  Gomory: 3
+  Cover: 3
+  Implied bound: 27
+  MIR: 14
+  Inf proof: 6
+  Zero half: 1
+  RLT: 34
+
+Explored 1668 nodes (14931 simplex iterations) in 0.19 seconds (0.24 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 497.778 529.123 532.452 ... 565.576
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.977777565786e+02, best bound 4.977777565786e+02, gap 0.0000%
+
+Optimal Solution Found!
+Total Objective Cost: 497.78
+Selected Candidate Mobile Depot: 100
+  Setup Cost: 20
+  Truck Round Trip Cost: 300
+
+Routes (Open VRP):
+Personnel 0:
+  Path: 100 -> 6 -> 8 -> 7 -> 1 -> 5
+  Distance: 177.78
+Personnel 1:
+  Path: 100 -> 2 -> 10 -> 9 -> 4 -> 3
+  Distance: 157.94
+Plot saved to plot_projectv2.png
