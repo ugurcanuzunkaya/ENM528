@@ -22,7 +22,7 @@ def generate_data() -> Dict[str, Any]:
     sink = 999     # Virtual Sink for Personnel
     
     # Parameters
-    setup_costs = {100: 20, 101: 10, 102: 30}
+    setup_costs = {100: 0, 101: 0, 102: 0}
     
     # Coordinates
     coords: Dict[int, Tuple[int, int]] = {}
@@ -239,7 +239,7 @@ def _solve_mobile_vrp_internal():
     # 4. Output & Visualization
     if m.status == GRB.OPTIMAL:
         print("\nOptimal Solution Found!")
-        print(f"Total Objective Cost: {m.ObjVal:.2f}")
+        print(f"Total Objective Cost: {m.ObjVal:.5f}")
         
         # Truck Route
         print("\nTruck Route:")
@@ -262,7 +262,7 @@ def _solve_mobile_vrp_internal():
             if curr == O:
                 break
         print(f"  Path: {' -> '.join(map(str, truck_path))}")
-        print(f"  Distance: {truck_dist:.2f}")
+        print(f"  Distance: {truck_dist:.5f}")
         
         # Personnel Routes
         print("\nPersonnel Routes:")
@@ -310,7 +310,7 @@ def _solve_mobile_vrp_internal():
                             else:
                                 break
                     
-                    print(f"  Personnel {p}: {' -> '.join(map(str, path))} (Dist: {dist:.2f})")
+                    print(f"  Personnel {p}: {' -> '.join(map(str, path))} (Dist: {dist:.5f})")
 
         plot_solution(data, m, x, z, y, "plot_projectv3.png")
 

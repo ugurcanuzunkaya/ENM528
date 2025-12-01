@@ -1,0 +1,69 @@
+--- Generating Data (VRPTW) ---
+--- Building Model (VRPTW) ---
+Set parameter Username
+Set parameter LicenseID to value 2718399
+Academic license - for non-commercial use only - expires 2026-10-06
+Set parameter TimeLimit to value 300
+--- Solving ---
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (mac64[arm] - Darwin 25.1.0 25B78)
+
+CPU model: Apple M3 Pro
+Thread count: 12 physical cores, 12 logical processors, using up to 12 threads
+
+Non-default parameters:
+TimeLimit  300
+
+Optimize a model with 395 rows, 329 columns and 1801 nonzeros
+Model fingerprint: 0xc4e26cb1
+Variable types: 26 continuous, 303 integer (303 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+04]
+  Objective range  [9e+00, 5e+02]
+  Bounds range     [1e+00, 5e+03]
+  RHS range        [1e+00, 1e+04]
+Presolve removed 353 rows and 117 columns
+Presolve time: 0.00s
+Presolved: 42 rows, 212 columns, 638 nonzeros
+Variable types: 0 continuous, 212 integer (212 binary)
+Found heuristic solution: objective 919.5941719
+
+Root relaxation: objective 8.016485e+02, 53 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0     801.6485335  801.64853  0.00%     -    0s
+
+Explored 1 nodes (53 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 801.649 919.594 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.016485334698e+02, best bound 8.016485334698e+02, gap 0.0000%
+
+Best Solution Found (Obj: 801.64853)
+
+Personnel 0:
+  Path: 100 -> 8 -> 7 -> 10 -> 1 -> 100
+  Distance: 207.43642
+  Arrival Times:
+    Node 100: 2000.00 (Window: (0, 2000))
+    Node 8: 110.00 (Window: (20, 110))
+    Node 7: 910.00 (Window: (820, 910))
+    Node 10: 980.00 (Window: (980, 1070))
+    Node 1: 1300.00 (Window: (1300, 1390))
+    Node 100: 2000.00 (Window: (0, 2000))
+
+Personnel 1:
+  Path: 100 -> 4 -> 3 -> 9 -> 6 -> 5 -> 2 -> 100
+  Distance: 294.21211
+  Arrival Times:
+    Node 100: 2000.00 (Window: (0, 2000))
+    Node 4: 270.00 (Window: (180, 270))
+    Node 3: 340.00 (Window: (340, 430))
+    Node 9: 500.00 (Window: (500, 590))
+    Node 6: 660.00 (Window: (660, 750))
+    Node 5: 1230.00 (Window: (1140, 1230))
+    Node 2: 1550.00 (Window: (1460, 1550))
+    Node 100: 2000.00 (Window: (0, 2000))

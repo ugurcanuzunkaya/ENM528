@@ -30,7 +30,7 @@ def generate_data() -> Dict[str, Any]:
     
     # Parameters
     # Setup costs for candidates
-    setup_costs = {100: 20, 101: 10, 102: 30}
+    setup_costs = {100: 0, 101: 0, 102: 0}
     
     # Distances from Main Depot to Candidates
     main_depot_dists = {100: 150, 101: 250, 102: 200}
@@ -209,7 +209,7 @@ def _solve_mobile_vrp_internal():
     # 4. Output & Visualization
     if m.status == GRB.OPTIMAL:
         print("\nOptimal Solution Found!")
-        print(f"Total Objective Cost: {m.ObjVal:.2f}")
+        print(f"Total Objective Cost: {m.ObjVal:.5f}")
         
         selected_k = None
         for k in K:
@@ -246,7 +246,7 @@ def _solve_mobile_vrp_internal():
                 curr = next_node
             
             print(f"  Path: {' -> '.join(map(str, route))}")
-            print(f"  Distance: {dist_p:.2f}")
+            print(f"  Distance: {dist_p:.5f}")
 
         # Visualization
         plot_solution(data, m, x, y, "plot_projectv2.png")

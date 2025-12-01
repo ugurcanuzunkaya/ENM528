@@ -1,7 +1,3 @@
-Scenario 1: Location-Routing Problem (LRP) with Minimax Objective
-Description: A truck travels from the Main Depot to a single selected Candidate Depot and returns. Personnel start at the selected depot, visit customers, and return to the depot (Closed Loop).
-Objective: Minimize (Setup Cost + Truck Round Trip Cost + Max Personnel Route Length).
-
 --- Generating Data ---
 --- Building Model ---
 Set parameter Username
@@ -14,72 +10,69 @@ CPU model: Apple M3 Pro
 Thread count: 12 physical cores, 12 logical processors, using up to 12 threads
 
 Optimize a model with 229 rows, 324 columns and 2111 nonzeros
-Model fingerprint: 0xbc36faea
+Model fingerprint: 0xd6fcd24b
 Variable types: 21 continuous, 303 integer (303 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+02]
   Objective range  [1e+00, 5e+02]
   Bounds range     [1e+00, 1e+01]
   RHS range        [1e+00, 6e+02]
-Found heuristic solution: objective 890.6125536
+Found heuristic solution: objective 860.6125536
 Presolve removed 2 rows and 1 columns
 Presolve time: 0.01s
 Presolved: 227 rows, 323 columns, 3508 nonzeros
 Variable types: 21 continuous, 302 integer (302 binary)
 
-Root relaxation: objective 4.928136e+02, 67 iterations, 0.00 seconds (0.00 work units)
+Root relaxation: objective 4.728136e+02, 67 iterations, 0.00 seconds (0.00 work units)
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-     0     0  492.81363    0   24  890.61255  492.81363  44.7%     -    0s
-H    0     0                     735.0062800  492.81363  33.0%     -    0s
-     0     0  495.47175    0   24  735.00628  495.47175  32.6%     -    0s
-     0     0  498.54537    0   25  735.00628  498.54537  32.2%     -    0s
-H    0     0                     669.1614721  498.54537  25.5%     -    0s
-     0     0  498.54537    0   24  669.16147  498.54537  25.5%     -    0s
-H    0     0                     668.4356752  498.54537  25.4%     -    0s
-     0     0  498.54537    0   24  668.43568  498.54537  25.4%     -    0s
-H    0     0                     659.0553332  498.54537  24.4%     -    0s
-H    0     0                     625.9935281  498.54537  20.4%     -    0s
-     0     0  498.54537    0   18  625.99353  498.54537  20.4%     -    0s
-H    0     0                     623.4604505  498.54537  20.0%     -    0s
-     0     0  498.88198    0   14  623.46045  498.88198  20.0%     -    0s
-     0     0  499.19107    0   24  623.46045  499.19107  19.9%     -    0s
-     0     0  499.29205    0   20  623.46045  499.29205  19.9%     -    0s
-     0     0  499.32356    0   21  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   21  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   14  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   14  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   14  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   14  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   24  623.46045  499.32356  19.9%     -    0s
-     0     0  499.32356    0   20  623.46045  499.32356  19.9%     -    0s
-     0     2  499.32356    0   20  623.46045  499.32356  19.9%     -    0s
-H   27    83                     608.9953345  499.32356  18.0%  16.2    0s
-H  173   180                     597.6026032  499.48261  16.4%  10.2    0s
-H  198   180                     595.8909871  499.48261  16.2%  10.0    0s
-*  348   298              28     584.1782644  500.09673  14.4%   9.6    0s
+     0     0  472.81363    0   24  860.61255  472.81363  45.1%     -    0s
+H    0     0                     715.0062800  472.81363  33.9%     -    0s
+     0     0  475.47175    0   24  715.00628  475.47175  33.5%     -    0s
+H    0     0                     649.1614721  478.54537  26.3%     -    0s
+     0     0  478.54537    0   25  649.16147  478.54537  26.3%     -    0s
+     0     0  478.54537    0   24  649.16147  478.54537  26.3%     -    0s
+H    0     0                     648.4356752  478.54537  26.2%     -    0s
+     0     0  478.54537    0   24  648.43568  478.54537  26.2%     -    0s
+     0     0  478.54537    0   24  648.43568  478.54537  26.2%     -    0s
+H    0     0                     639.8809902  478.54537  25.2%     -    0s
+H    0     0                     615.1090199  478.77552  22.2%     -    0s
+     0     0  478.77552    0   24  615.10902  478.77552  22.2%     -    0s
+     0     0  478.92662    0   24  615.10902  478.92662  22.1%     -    0s
+     0     0  479.32356    0   21  615.10902  479.32356  22.1%     -    0s
+     0     0  479.32356    0   21  615.10902  479.32356  22.1%     -    0s
+H    0     0                     609.7020270  479.32356  21.4%     -    0s
+     0     0  479.32356    0   24  609.70203  479.32356  21.4%     -    0s
+     0     0  479.32356    0   14  609.70203  479.32356  21.4%     -    0s
+H    0     0                     580.3807013  479.32356  17.4%     -    0s
+     0     0  479.32356    0   24  580.38070  479.32356  17.4%     -    0s
+     0     0  479.32356    0   24  580.38070  479.32356  17.4%     -    0s
+     0     0  479.32356    0   24  580.38070  479.32356  17.4%     -    0s
+     0     0  479.32356    0   23  580.38070  479.32356  17.4%     -    0s
+     0     2  479.32356    0   23  580.38070  479.32356  17.4%     -    0s
+H   27    88                     564.1782644  479.32356  15.0%  15.5    0s
 
-Explored 28485 nodes (222174 simplex iterations) in 0.98 seconds (1.52 work units)
+Explored 27447 nodes (214223 simplex iterations) in 1.02 seconds (1.56 work units)
 Thread count was 12 (of 12 available processors)
 
-Solution count 10: 584.178 595.891 597.603 ... 735.006
+Solution count 9: 564.178 580.381 609.702 ... 860.613
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 5.841782643637e+02, best bound 5.841782643637e+02, gap 0.0000%
+Best objective 5.641782643637e+02, best bound 5.641782643637e+02, gap 0.0000%
 
 Optimal Solution Found!
-Total Objective Cost: 584.18
+Total Objective Cost: 564.17826
 Selected Candidate Mobile Depot: 100
-  Setup Cost: 20
+  Setup Cost: 0
   Truck Round Trip Cost: 300
 
 Routes:
 Personnel 0:
-  Path: 100 -> 2 -> 10 -> 3 -> 4 -> 9 -> 100
-  Distance: 235.91
-Personnel 1:
   Path: 100 -> 6 -> 8 -> 5 -> 1 -> 7 -> 100
-  Distance: 264.18
+  Distance: 264.17826
+Personnel 1:
+  Path: 100 -> 2 -> 9 -> 10 -> 4 -> 3 -> 100
+  Distance: 224.64828
 Plot saved to plot_project.png

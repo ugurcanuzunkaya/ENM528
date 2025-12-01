@@ -1,0 +1,78 @@
+--- Generating Data (Multi-Objective) ---
+Alpha      | Z1 (Cost)       | Z2 (Balance)    | ObjVal         
+-----------------------------------------------------------------
+Set parameter Username
+Set parameter LicenseID to value 2718399
+Academic license - for non-commercial use only - expires 2026-10-06
+0.0        | 1141.86185      | -0.00000        | -0.00000       
+
+--- Details for Alpha = 0.0 ---
+Selected Depot: 102
+Personnel 0:
+  Path: 102 -> 2 -> 8 -> 9 -> 10 -> 102
+  Distance: 370.93193
+Personnel 1:
+  Path: 102 -> 3 -> 1 -> 7 -> 4 -> 5 -> 6 -> 102
+  Distance: 370.92980
+------------------------------
+
+0.2        | 826.53971       | 1.81682         | 166.76140      
+
+--- Details for Alpha = 0.2 ---
+Selected Depot: 100
+Personnel 0:
+  Path: 100 -> 4 -> 10 -> 3 -> 9 -> 2 -> 100
+  Distance: 262.36145
+Personnel 1:
+  Path: 100 -> 6 -> 8 -> 5 -> 1 -> 7 -> 100
+  Distance: 264.17826
+------------------------------
+
+0.4        | 826.53971       | 1.81682         | 331.70598      
+
+--- Details for Alpha = 0.4 ---
+Selected Depot: 100
+Personnel 0:
+  Path: 100 -> 2 -> 9 -> 3 -> 10 -> 4 -> 100
+  Distance: 262.36145
+Personnel 1:
+  Path: 100 -> 7 -> 1 -> 5 -> 8 -> 6 -> 100
+  Distance: 264.17826
+------------------------------
+
+0.6        | 773.35871       | 54.99782        | 486.01435      
+
+--- Details for Alpha = 0.6 ---
+Selected Depot: 100
+Personnel 0:
+  Path: 100 -> 3 -> 4 -> 9 -> 10 -> 2 -> 100
+  Distance: 209.18051
+Personnel 1:
+  Path: 100 -> 6 -> 8 -> 5 -> 1 -> 7 -> 100
+  Distance: 264.17826
+------------------------------
+
+0.8        | 685.23734       | 297.14648       | 607.61917      
+
+--- Details for Alpha = 0.8 ---
+Selected Depot: 100
+Personnel 0:
+  Path: 100 -> 2 -> 100
+  Distance: 44.04543
+Personnel 1:
+  Path: 100 -> 6 -> 8 -> 5 -> 1 -> 7 -> 3 -> 4 -> 9 -> 10 -> 100
+  Distance: 341.19191
+------------------------------
+
+1.0        | 685.23734       | 342.00000       | 685.23734      
+
+--- Details for Alpha = 1.0 ---
+Selected Depot: 100
+Personnel 0:
+  Path: 100 -> 10 -> 9 -> 4 -> 3 -> 7 -> 1 -> 5 -> 8 -> 6 -> 100
+  Distance: 341.19191
+Personnel 1:
+  Path: 100 -> 2 -> 100
+  Distance: 44.04543
+------------------------------
+

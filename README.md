@@ -32,17 +32,55 @@ This project implements three variations of the Mobile Vehicle Routing Problem (
     *   Open loop personnel routes.
     *   Two-echelon synchronization.
 
+### Scenario 4: Heterogeneous Fleet VRP
+**File:** `projectv4.py`
+*   **Description**: Introduces different types of personnel/vehicles (e.g., Cargo Bike vs. E-Scooter) with different capacities and costs.
+*   **Objective**: Minimize Total Cost (Setup + Truck + Weighted Distance).
+*   **Key Features**:
+    *   **Cargo Bike**: High Capacity (100), High Cost (1.5/km).
+    *   **E-Scooter**: Low Capacity (40), Low Cost (1.0/km).
+    *   Capacity constraints included.
+
+### Scenario 5: Multi-Objective Optimization
+**File:** `projectv5.py`
+*   **Description**: Balances **Operational Cost** vs. **Workload Balance** (Social Fairness) using the Weighted Sum Method.
+*   **Objective**: Minimize $\alpha \cdot Z_1 + (1 - \alpha) \cdot Z_2$.
+*   **Key Features**:
+    *   Pareto Frontier analysis.
+    *   $Z_1$: Total Cost.
+    *   $Z_2$: Workload Imbalance ($W_{max} - W_{min}$).
+
+### Scenario 6: Green VRP (Load-Dependent Energy)
+**File:** `projectv6.py`
+*   **Description**: Models Electric Vehicle (EV) physics where energy consumption depends on distance and carried load.
+*   **Key Features**:
+    *   Battery State of Charge (SoC) tracking.
+    *   Energy consumption formula: $E = Dist \times (Base + Factor \times Load)$.
+    *   Ensures vehicles return/finish with non-negative battery.
+
+### Scenario 7: VRPTW (Time Windows)
+**File:** `projectv7.py`
+*   **Description**: Adds temporal constraints where customers must be visited within specific time windows.
+*   **Key Features**:
+    *   Time propagation logic.
+    *   Service times at customers.
+    *   Hard time window constraints.
+
 ## Results Summary
 
 | Scenario | Total Cost | Selected Depot(s) | Truck Cost | Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **Scenario 1** | **584.18** | 100 | 300.00 | High cost due to personnel return trips and single depot constraint. |
-| **Scenario 2** | **497.78** | 100 | 300.00 | **~15% improvement** over Scenario 1 by eliminating return trips. |
-| **Scenario 3** | **303.13** | 100, 101 | 176.16 | **~48% improvement** over Scenario 1. The truck efficiently connects multiple depots, reducing the "last mile" distance for personnel. |
+| **Scenario 1** | **564.18** | 100 | 300.00 | High cost due to personnel return trips and single depot constraint. |
+| **Scenario 2** | **477.78** | 100 | 300.00 | **~15% improvement** over Scenario 1 by eliminating return trips. |
+| **Scenario 3** | **273.13** | 100, 101 | 176.16 | **~52% improvement** over Scenario 1. The truck efficiently connects multiple depots. |
+| **Scenario 4** | **820.71** | 100 | 300.00 | Heterogeneous Fleet (Total Weighted Cost). Includes capacity constraints. |
+| **Scenario 5** | *Pareto* | 100 | 300.00 | Trade-off between Cost (685-1141) and Balance (0-342). |
+| **Scenario 6** | **640.93** | 100 | 300.00 | Green VRP. Energy consumption limits route length based on load. |
+| **Scenario 7** | **801.65** | 100 | 300.00 | VRPTW. Feasible routes found within strict time windows. |
 
 ## Output Files
-*   **Text Output**: Detailed solver logs and route descriptions are saved in `output_project.txt`, `output_projectv2.txt`, and `output_projectv3.txt`.
-*   **Visualizations**: Route plots are saved as `plot_project.png`, `plot_projectv2.png`, and `plot_projectv3.png`.
+*   **Text Output**: Detailed solver logs and route descriptions are saved in `output_project*.txt`.
+*   **Visualizations**: Route plots are saved as `plot_project*.png`. The latest versions include **grids, directional arrows, and clear labels** for better readability.
 
 ## Requirements
 *   Python 3.x
