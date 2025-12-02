@@ -23,7 +23,7 @@ def generate_data() -> Dict[str, Any]:
     coords[100] = (20, 80)
     coords[101] = (50, 80)
     coords[102] = (80, 20)
-    
+
     random.seed(42)
     demands = {}
     for i in customers:
